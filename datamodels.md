@@ -27,7 +27,7 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextuelle Besc
 
 # RoadSegment
 
-
+Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene Beschreibung eines Straßensegments. Eine Menge von Straßensegmenten wird zur Beschreibung einer Straße verwendet.
 -  `endPoint`: Geojson-Referenz auf das Element. Kann Point, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein
    -  Attribute type: **GeoProperty**. 
    -  Required
@@ -338,7 +338,7 @@ Baumaßnahme, welche eine Straße betrifft
 -  `startDate`: Datum und Uhrzeit des Beginns der Arbeiten im Format ISO8601 UTC. Das Attribut kann zusätzlich zum Attribut `workDate` verwendet werden, wenn es einem hervorzuhebenden Zeitintervall entspricht
    -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
    -  Optional
--  `location`: Geojson-Referenz auf das Element. Kann Point, LineString, Polygon, MultiPoint, MultiLineString oderr MultiPolygon sein
+-  `location`: Geojson-Referenz auf das Element. Kann Point, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein
    -  Attribute type: **Geoproperty**. 
    -  Required
 -  `impactsRoadSegment`: Straßensegmente, welche von Wartungsmaßnahme betroffen sind. Liste der Referenzen auf Entitäten des Typs RoadSegment
