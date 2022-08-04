@@ -18,41 +18,25 @@
         "airTemperature": "https://saref.etsi.org/saref4agri/v1.1.2/#s4agri:AirTemperature",
         "category": "https://w3id.org/sarefcategory",
         "constructionDate": "example:constructionDate",
-        "controlledAsset": {
-            "@id": "example:controlledAsset",
-            "@type": "@id"
-        },
+        "controlledAsset": "example:controlledAsset",
         "controlledProperty": "example:controlledProperty",
+        "datasetId": "ngsi-ld:datasetId",
         "dateObservedFrom": "smartdata:dataModel.Transportation/dateObservedFrom",
         "dateObservedTo": "smartdata:dataModel.Transportation/dateObservedTo",
         "endDate": "smartdata:dataModel.Transportation/endDate",
         "endPoint": "smartdata:dataModel.Transportation/endPoint",
         "humidity": "https://saref.etsi.org/core/v3.1.1/#saref:Humidity",
-        "impactsRoadSegment": {
-            "@id": "example:impactsRoadSegment",
-            "@type": "@id"
-        },
-        "isImpactedByRoadWork": {
-            "@id": "example:isImpactedByRoadWork",
-            "@type": "@id"
-        },
-        "isMeasuredByDevice": {
-            "@id": "https://saref.etsi.org/core/isMeasuredByDevice",
-            "@type": "@id"
-        },
+        "impactsRoadSegment": "example:impactsRoadSegment",
+        "isImpactedByRoadWork": "example:isImpactedByRoadWork",
+        "isMeasuredByDevice": "https://saref.etsi.org/core/isMeasuredByDevice",
         "laneId": "smartdata:dataModel.Transportation/laneId",
         "name": "smartdata:name",
+        "observedAt": "ngsi-ld:observedAt",
         "pavementConditionIndex": "example:pavementConditionIndex",
         "postOfficeBoxNumber": "schema:postOfficeBoxNumber",
         "postalCode": "schema:postalCode",
-        "refRoad": {
-            "@id": "smartdata:dataModel.Transportation/refRoad",
-            "@type": "@id"
-        },
-        "refRoadSegment": {
-            "@id": "smartdata:dataModel.Transportation/refRoadSegment",
-            "@type": "@id"
-        },
+        "refRoad": "smartdata:dataModel.Transportation/refRoad",
+        "refRoadSegment": "smartdata:dataModel.Transportation/refRoadSegment",
         "roadClass": "smartdata:dataModel.Transportation/roadClass",
         "roadSlipperyRisk": "example:roadSlipperyRisk",
         "roadSurfaceCondition": "example:roadSurfaceCondition",
@@ -63,6 +47,7 @@
         "surfaceTemperature": "example:surfaceTemperature",
         "totalLaneNumber": "smartdata:dataModel.Transportation/totalLaneNumber",
         "trafficFlow": "example:trafficFlow",
+        "unitCode": "ngsi-ld:unitCode",
         "updateInterval": "example:updateInterval",
         "vehicleType": "example:vehicleType",
         "workNature": "example:workNature"
