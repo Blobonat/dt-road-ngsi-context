@@ -18,7 +18,7 @@
         "airTemperature": "https://saref.etsi.org/saref4agri/v1.1.2/#s4agri:AirTemperature",
         "category": "https://w3id.org/sarefcategory",
         "constructionDate": "example:constructionDate",
-        "controlledAsset": "example:controlledAsset",
+        "controlledAsset": "smartdata:dataModel.Device/controlledAsset",
         "controlledProperty": "example:controlledProperty",
         "datasetId": "ngsi-ld:datasetId",
         "dateObservedFrom": "smartdata:dataModel.Transportation/dateObservedFrom",
