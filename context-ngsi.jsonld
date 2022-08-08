@@ -20,7 +20,6 @@
         "constructionDate": "example:constructionDate",
         "controlledAsset": "smartdata:dataModel.Device/controlledAsset",
         "controlledProperty": "example:controlledProperty",
-        "datasetId": "ngsi-ld:datasetId",
         "dateObservedFrom": "smartdata:dataModel.Transportation/dateObservedFrom",
         "dateObservedTo": "smartdata:dataModel.Transportation/dateObservedTo",
         "endDate": "smartdata:dataModel.Transportation/endDate",
@@ -31,7 +30,6 @@
         "laneId": "smartdata:dataModel.Transportation/laneId",
         "measurementMadeBy": "example:measurementMadeBy",
         "name": "smartdata:name",
-        "observedAt": "ngsi-ld:observedAt",
         "pavementConditionIndex": "example:pavementConditionIndex",
         "postOfficeBoxNumber": "schema:postOfficeBoxNumber",
         "postalCode": "schema:postalCode",
@@ -47,7 +45,6 @@
         "surfaceTemperature": "example:surfaceTemperature",
         "totalLaneNumber": "smartdata:dataModel.Transportation/totalLaneNumber",
         "trafficFlow": "example:trafficFlow",
-        "unitCode": "ngsi-ld:unitCode",
         "updateInterval": "example:updateInterval",
         "vehicleType": "example:vehicleType",
         "workNature": "example:workNature"
