@@ -53,7 +53,7 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Optional
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -63,7 +63,7 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Optional
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -76,7 +76,7 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Optional
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -92,7 +92,7 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -122,7 +122,7 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
            -  Attribute type: **Property**. [Datetime](https://schema.org/Datetime)
        -  `dateObservedTo`: Datum und Uhrzeit vom Ende des Beobachtungsintervalls
            -  Attribute type: **Property**. [Datetime](https://schema.org/Datetime)
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `datasetId`: Eindeutiger Bezeichner des Datasets
            -  Attribute type: **Property**. 
@@ -141,6 +141,12 @@ Ein Gerät, das zur Messung der Lufttemperatur verwendet wird.
 -  `category`: Sensor: Ein Gerät, das Ereignisse oder Veränderungen in der physikalischen Umgebung wie Licht, Bewegung oder Temperaturveränderungen erkennt und darauf reagiert. https://w3id.org/saref#Sensor. Actuator: Ein Gerät, das für die Bewegung oder Steuerung eines Mechanismus oder Systems verantwortlich ist. https://w3id.org/saref#Actuator
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
+-  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
+   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Meta Data: 
+       -  `datasetId`: Eindeutiger Bezeichner des Datasets
+           -  Attribute type: **Property**. 
 -  `id`: Eindeutiger Bezeichner der Entität
    -  Attribute type: **Property**. 
    -  Required
@@ -150,17 +156,11 @@ Ein Gerät, das zur Messung der Lufttemperatur verwendet wird.
 -  `controlledProperty`: Alles, was von einem Sensor erfasst, gemessen oder kontrolliert werden kann. Enum:''humidity, trafficFlow, airTemperature, surfaceTemperature, roadSurfaceCondition'
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Required
--  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
-   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
-   -  Optional
-   -  Meta Data: 
-       -  `datasetId`: Eindeutiger Bezeichner des Datasets
-           -  Attribute type: **Property**. 
 -  `airTemperature`: Lufttemperatur
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Required
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -178,6 +178,12 @@ Ein Gerät zur Messung der Oberflächentemperatur.
 -  `category`: Sensor: Ein Gerät, das Ereignisse oder Veränderungen in der physikalischen Umgebung wie Licht, Bewegung oder Temperaturveränderungen erkennt und darauf reagiert. https://w3id.org/saref#Sensor. Actuator: Ein Gerät, das für die Bewegung oder Steuerung eines Mechanismus oder Systems verantwortlich ist. https://w3id.org/saref#Actuator
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
+-  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
+   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Meta Data: 
+       -  `datasetId`: Eindeutiger Bezeichner des Datasets
+           -  Attribute type: **Property**. 
 -  `id`: Eindeutiger Bezeichner der Entität
    -  Attribute type: **Property**. 
    -  Required
@@ -187,17 +193,11 @@ Ein Gerät zur Messung der Oberflächentemperatur.
 -  `controlledProperty`: Alles, was von einem Sensor erfasst, gemessen oder kontrolliert werden kann. Enum:''humidity, trafficFlow, airTemperature, surfaceTemperature, roadSurfaceCondition'
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Required
--  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
-   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
-   -  Optional
-   -  Meta Data: 
-       -  `datasetId`: Eindeutiger Bezeichner des Datasets
-           -  Attribute type: **Property**. 
 -  `surfaceTemperature`: Oberflächentemperatur
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Required
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -215,6 +215,12 @@ Ein Gerät zur Messung der relativen Luftfeuchtigkeit.
 -  `category`: Sensor: Ein Gerät, das Ereignisse oder Veränderungen in der physikalischen Umgebung wie Licht, Bewegung oder Temperaturveränderungen erkennt und darauf reagiert. https://w3id.org/saref#Sensor. Actuator: Ein Gerät, das für die Bewegung oder Steuerung eines Mechanismus oder Systems verantwortlich ist. https://w3id.org/saref#Actuator
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
+-  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
+   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Meta Data: 
+       -  `datasetId`: Eindeutiger Bezeichner des Datasets
+           -  Attribute type: **Property**. 
 -  `id`: Eindeutiger Bezeichner der Entität
    -  Attribute type: **Property**. 
    -  Required
@@ -224,17 +230,11 @@ Ein Gerät zur Messung der relativen Luftfeuchtigkeit.
 -  `controlledProperty`: Alles, was von einem Sensor erfasst, gemessen oder kontrolliert werden kann. Enum:''humidity, trafficFlow, airTemperature, surfaceTemperature, roadSurfaceCondition'
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Required
--  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
-   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
-   -  Optional
-   -  Meta Data: 
-       -  `datasetId`: Eindeutiger Bezeichner des Datasets
-           -  Attribute type: **Property**. 
 -  `humidity`: Relative Luftfeuchtigkeit
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Required
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -252,6 +252,12 @@ Ein Gerät, um den Fahrbahnoberflächenzustand zu bestimmen.
 -  `category`: Sensor: Ein Gerät, das Ereignisse oder Veränderungen in der physikalischen Umgebung wie Licht, Bewegung oder Temperaturveränderungen erkennt und darauf reagiert. https://w3id.org/saref#Sensor. Actuator: Ein Gerät, das für die Bewegung oder Steuerung eines Mechanismus oder Systems verantwortlich ist. https://w3id.org/saref#Actuator
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
+-  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
+   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Meta Data: 
+       -  `datasetId`: Eindeutiger Bezeichner des Datasets
+           -  Attribute type: **Property**. 
 -  `id`: Eindeutiger Bezeichner der Entität
    -  Attribute type: **Property**. 
    -  Required
@@ -261,17 +267,11 @@ Ein Gerät, um den Fahrbahnoberflächenzustand zu bestimmen.
 -  `controlledProperty`: Alles, was von einem Sensor erfasst, gemessen oder kontrolliert werden kann. Enum:''humidity, trafficFlow, airTemperature, surfaceTemperature, roadSurfaceCondition'
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Required
--  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
-   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
-   -  Optional
-   -  Meta Data: 
-       -  `datasetId`: Eindeutiger Bezeichner des Datasets
-           -  Attribute type: **Property**. 
 -  `roadSurfaceCondition`: Oberflächenzustand einer Straße. Enum:'dry, dampOrWet, frozen'.  Erlaubte Werte: Werte in Anlehnung an [TLS DE-Typ 70 (0, 32, 64)](https://www.bast.de/DE/Publikationen/Regelwerke/Verkehrstechnik/Unterseiten/V5-tls-2012.html).. One of : `dry`, `dampOrWet`, `frozen`.
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Required
    -  Meta Data: 
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
@@ -287,6 +287,12 @@ Ein Gerät zur Messung des Verkehrsflusses.
 -  `category`: Sensor: Ein Gerät, das Ereignisse oder Veränderungen in der physikalischen Umgebung wie Licht, Bewegung oder Temperaturveränderungen erkennt und darauf reagiert. https://w3id.org/saref#Sensor. Actuator: Ein Gerät, das für die Bewegung oder Steuerung eines Mechanismus oder Systems verantwortlich ist. https://w3id.org/saref#Actuator
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
+-  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
+   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Meta Data: 
+       -  `datasetId`: Eindeutiger Bezeichner des Datasets
+           -  Attribute type: **Property**. 
 -  `id`: Eindeutiger Bezeichner der Entität
    -  Attribute type: **Property**. 
    -  Required
@@ -296,12 +302,6 @@ Ein Gerät zur Messung des Verkehrsflusses.
 -  `controlledProperty`: Alles, was von einem Sensor erfasst, gemessen oder kontrolliert werden kann. Enum:''humidity, trafficFlow, airTemperature, surfaceTemperature, roadSurfaceCondition'
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Required
--  `controlledAsset`: Liste von Asset(s) (Gebäude, Objekt, etc.), welche vom Gerät kontrolliert werden.
-   -  Attribute type: **Relationship**. [Text](https://schema.org/Text)
-   -  Optional
-   -  Meta Data: 
-       -  `datasetId`: Eindeutiger Bezeichner des Datasets
-           -  Attribute type: **Property**. 
 -  `trafficFlow`: Beobachteter Verkehrsfluss nach Fahrspur und Fahrzeugklassen im Beobachtungsintervall.
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Required
@@ -316,7 +316,7 @@ Ein Gerät zur Messung des Verkehrsflusses.
            -  Attribute type: **Property**. [Datetime](https://schema.org/Datetime)
        -  `dateObservedTo`: Datum und Uhrzeit vom Ende des Beobachtungsintervalls
            -  Attribute type: **Property**. [Datetime](https://schema.org/Datetime)
-       -  `isMeasuredByDevice`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
+       -  `measurementMadeBy`: Property. Bezeichnungsformat der NGSI-Entität, welche das Gerät ist, welches die Messung zur Verfügung stellt.
            -  Attribute type: **Relationship**. 
        -  `datasetId`: Eindeutiger Bezeichner des Datasets
            -  Attribute type: **Property**. 

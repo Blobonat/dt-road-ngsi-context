@@ -16,7 +16,7 @@
         "addressLocality": "schema:addressLocality",
         "addressRegion": "schema:addressRegion",
         "airTemperature": "https://saref.etsi.org/saref4agri/v1.1.2/#s4agri:AirTemperature",
-        "category": "https://w3id.org/sarefcategory",
+        "category": "smartdata:dataModel.Device/category",
         "constructionDate": "example:constructionDate",
         "controlledAsset": "smartdata:dataModel.Device/controlledAsset",
         "controlledProperty": "example:controlledProperty",
