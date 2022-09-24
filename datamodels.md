@@ -82,8 +82,8 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
        -  `unitCode`: Eine Zeichenfolge, welche die, der Messung entsprechenden, Maßeinheit darstellt. Sie ist unter Verwendung der UN/CEFACT Common Codes for Units of Measurement zu kodieren
            -  Attribute type: **Property**. [Text](https://schema.org/Text)
--  `pavementConditionIndex`: The pavement condidition of a road segment according to the pavement condition index (PCI). Enum:'good, satisfactory, fair, poor, veryPoor, serious, failed'.  Allowed values: Those classes described by [Wikipedia](https://en.wikipedia.org/wiki/Pavement_condition_index#Categorization).. One of : `good`, `satisfactory`, `fair`, `poor`, `veryPoor`, `serious`, `failed`.
-   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+-  `pavementConditionIndex`: Pavement Condition Index (0-100)
+   -  Attribute type: **Property**. 
    -  Optional
    -  Meta Data: 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
@@ -96,18 +96,21 @@ Diese Entität enthält eine vereinheitlichte geografische und kontextbezogene B
            -  Attribute type: **Relationship**. 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
--  `roadSlipperyRisk`: The slippery condition of a road. Enum:'low, moderate, high'.. One of : `low`, `moderate`, `high`.
+-  `roadSlipperyRisk`: Die Glättegefahr. Enum:'low, moderate, high'.. One of : `low`, `moderate`, `high`.
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
    -  Meta Data: 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
--  `structure`: Dieses Attribut kann verwendet werden, um spezifische Parameter zu übermitteln, welche die Dicke und das Material für jede Schicht des Straßenabschnitts beschreiben. Es muss eine Zeichenfolge pro Schicht des Straßenabschnitts enthalten. Das Element 0 des Arrays muss die Angaben zur obersten Schicht enthalten, usw. Das Format der Zeichenkette entspricht: <Schichtdicke in mm>, <Schichtmaterial>
+-  `pavementTotalThickness`: Gesamtdicke der Straßenbefestigung
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
    -  Meta Data: 
        -  `observedAt`: Ein Zeitstempel, welcher angibt, wann der Wert abgelesen wurde.
            -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+-  `pavementType`: Art der Straßenbefestigung
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
 -  `trafficFlow`: Beobachteter Verkehrsfluss nach Fahrspur und Fahrzeugklassen im Beobachtungsintervall.
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Optional
@@ -350,7 +353,7 @@ Baumaßnahme, welche eine Straße betrifft
 -  `type`: Typ der NGSI-Entität. Muss 'RoadWork' sein. One of : `RoadWork`.
    -  Attribute type: **Property**. 
    -  Required
--  `workNature`: Grund der Arbeiten. Eine Kombination aus diesen Werten. Enum:'maintenance, rehabilitation, crackSealing, patchPotHoles'
+-  `workNature`: Grund der Arbeiten.'
    -  Attribute type: **Property**. 
    -  Optional
 
