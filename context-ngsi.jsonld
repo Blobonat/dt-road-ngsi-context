@@ -50,6 +50,8 @@
         "vehicleType": "example:vehicleType",
         "workNature": "example:workNature",
         "warningOn": "example:warningOn",
-        "warningOff": "example:warningOff"
+        "warningOff": "example:warningOff",
+         "on": "https://w3id.org/saref#on",
+        "off": "https://w3id.org/saref#off"
     }
 }
